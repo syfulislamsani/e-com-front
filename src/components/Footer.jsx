@@ -26,7 +26,7 @@ const Footer = () => {
           <li>contact@foreveryou.com</li>
         </ul>
       </div>
-      <div>
+      <div className='col-span-3'>
         <hr />
         <p className='py-5 text-sm text-center'>Copyright 2024 hikmahlifestyle.com - All Right Reserved</p>
       </div>
