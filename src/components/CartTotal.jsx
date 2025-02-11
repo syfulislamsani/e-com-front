@@ -11,7 +11,7 @@ const CartTotal = () => {
         </div>
         <div className='flex flex-col gap-2 mt-2 text-sm'>
             <div className='flex justify-between'>
-                <p>Suntotal</p>
+                <p>Sumtotal</p>
                 <p>{currency} {getCartAmount()}.00</p>
             </div>
             <hr />
