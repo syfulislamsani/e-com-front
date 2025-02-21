@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
 import {assets} from "../../assets/assets";
 import RelatedProducts from "../../components/RelatedProducts";
+import { toast } from "react-toastify";
 
 const Product = () => {
 
@@ -11,6 +12,7 @@ const Product = () => {
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('');
   const [size, setSize] = useState('');
+  const navigate = useNavigate();
 
   const fetchProductData = async () => {
 
@@ -22,6 +24,17 @@ const Product = () => {
       }
     })
     
+  }
+
+  const cartBuyPage = (x) => {
+    if(size){
+      addToCart(productData._id,size);
+      if(x===2)
+        navigate('/cart');
+    }
+    else {
+      toast.error('Please select a size');
+    }
   }
 
   useEffect(()=>{
@@ -56,7 +69,7 @@ const Product = () => {
             <img src={assets.star_icon} alt="" className="w-3 "/>
             <img src={assets.star_icon} alt="" className="w-3 "/>
             <img src={assets.star_dull_icon} alt="" className="w-3 "/>
-            <p className="pl-2">{122}</p>
+            {/* <p className="pl-2">{122}</p> */}
           </div>
           <p className="mt-5 text-xl font-medium">{currency}{productData.price}</p>
           <p className="mt-5 text-gray-500 md:w-4/5">{productData.description}</p>
@@ -68,12 +81,15 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <button onClick={()=>addToCart(productData._id,size)} className="bg-black text-white py-3 px-8 text-sm active:bg-gray-700">Add to cart</button>
+          <div className="flex gap-3">
+            <button onClick={()=>cartBuyPage(1)} className="bg-black text-white py-3 px-8 text-sm active:bg-gray-700 hover:bg-gray-900">Add to cart</button>
+            <button onClick={()=>cartBuyPage(2)} className="bg-black text-white py-3 px-8 text-sm active:bg-gray-700 hover:bg-gray-900">Buy Now</button>
+          </div>
           <hr className="mt-8 sm:w-4/5"/>
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
-              <p>100% Original product</p>
-              <p>Cash on delivery is available</p>
-              <p>Easy return and exchange policy within 7 days.</p>
+              <p>- 100% Original product</p>
+              <p>- Cash on delivery is available</p>
+              <p>- Easy return and exchange policy within 7 days.</p>
           </div>
         </div>
       </div>
@@ -81,7 +97,7 @@ const Product = () => {
       <div className="mt-20">
           <div className="flex">
               <b className="border px-5 py-3 text-sm">Description</b>
-              <p className="border px-5 py-3 text-sm">Reviews (122)</p>
+              {/* <p className="border px-5 py-3 text-sm">Reviews (122)</p> */}
           </div>
           <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis mollitia quibusdam inventore doloremque aperiam molestias deleniti, maiores fuga eius laboriosam.</p>
