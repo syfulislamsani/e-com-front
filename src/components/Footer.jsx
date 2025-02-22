@@ -1,11 +1,12 @@
 import React from 'react'
 import logo from '../images/logo.png'
+import { assets } from '../assets/assets'
 
 const Footer = () => {
   return (
     <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
       <div>
-        <img src={logo} className='mb-5 w-24' alt="" />
+        <img src={assets.logo_main} className='mb-5 w-24' alt="" />
         <p className='w-full md:w-2/3 text-gray-600'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis quibusdam ut iste sit est qui asperiores eos tempore eaque adipisci.
         </p>
@@ -28,7 +29,7 @@ const Footer = () => {
       </div>
       <div className='col-span-3'>
         <hr />
-        <p className='py-5 text-sm text-center'>Copyright 2024 hikmahlifestyle.com - All Right Reserved</p>
+        <p className='py-5 text-sm text-center'>Copyright 2025 styleoclock.com - All Right Reserved</p>
       </div>
     </div>
   )

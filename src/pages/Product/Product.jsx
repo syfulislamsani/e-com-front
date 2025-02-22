@@ -62,6 +62,9 @@ const Product = () => {
 
         {/* product info */}
         <div className="flex-1">
+          <div className="mb-4">
+            {productData.sales && <span className="mt-4 px-6 py-1 font-bold text-white bg-orange-500">{productData.sales}%  SALES</span>}
+          </div>
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
             <img src={assets.star_icon} alt="" className="w-3 "/>
@@ -71,7 +74,10 @@ const Product = () => {
             <img src={assets.star_dull_icon} alt="" className="w-3 "/>
             {/* <p className="pl-2">{122}</p> */}
           </div>
-          <p className="mt-5 text-xl font-medium">{currency}{productData.price}</p>
+          <div className='mt-4 flex gap-3'>
+            <p className={`text-xl ${productData.sales ? 'text-orange-500' : 'text-gray-900'} font-medium`}>{currency}{productData.sales ? productData.discountedPrice : productData.price}</p>
+            { productData.sales && <p className='text-xl font-medium line-through'>{currency}{productData.price}</p>}
+          </div>
           <p className="mt-5 text-gray-500 md:w-4/5">{productData.description}</p>
           <div className="flex flex-col gap-4 my-8">
             <p>Select Size</p>

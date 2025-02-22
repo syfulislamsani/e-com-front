@@ -8,7 +8,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
     
     const currency = '৳ ';
-    const delivery_fee = 10;
+    const [delivery_fee, setDelivery_fee] = useState(60);
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
@@ -93,7 +93,7 @@ const ShopContextProvider = (props) => {
             for(const item in cartItems[items]){
                 try{
                     if(cartItems[items][item] > 0){
-                        totalAmount += cartItems[items][item] * itemInfo.price;
+                        totalAmount += cartItems[items][item] *  (itemInfo.sales ? itemInfo.discountedPrice : itemInfo.price);
                     }
                 } catch (error){
 
@@ -144,7 +144,7 @@ const ShopContextProvider = (props) => {
     }, [])
 
     const value = {
-        products, currency, delivery_fee,
+        products, currency, delivery_fee, setDelivery_fee,
         search, setSearch, showSearch, setShowSearch,
         cartItems, addToCart, setCartItems,
         getCartCount, updateQuantity,
