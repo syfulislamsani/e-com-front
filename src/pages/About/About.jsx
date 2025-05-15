@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../../components/Title";
 import {assets} from "../../assets/assets";
-import NewsLetterBox from "../../components/NewsLetterBox"
 
 const About = () => {
   return <div>
@@ -38,8 +37,6 @@ const About = () => {
         <p className="text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi deserunt illo numquam doloribus optio in itaque quibusdam consectetur, hic consequuntur, dolorem delectus illum!</p>
       </div>
     </div>
-    
-    <NewsLetterBox />
 
   </div>;
 };
