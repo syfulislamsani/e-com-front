@@ -81,32 +81,35 @@ const Collections = () => {
           <img className={`my-auto h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
         </p>
         {/* category filter */}
-        <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'}  sm:block`}>
+        {/*<div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'}  sm:block`}>
           <p className="mb-3 text-sm font-medium">CATEGORY</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
               <input className="w-3" type="checkbox" value={'Men'} onChange={toggleCategory}/> Men
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={'Women'} onChange={toggleCategory}/> Women
+              <input className="w-3" type="checkbox" value={'Women'} onChange={toggleCategory} disabled/> Women
             </p>
             <p className="flex gap-2">
               <input className="w-3" type="checkbox" value={'Kids'} onChange={toggleCategory}/> Kids
             </p>
           </div>
-        </div>
+        </div>*/}
         {/* subcategory filter */}
         <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'}  sm:block`}>
           <p className="mb-3 text-sm font-medium">TYPE</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={'Topwear'}  onChange={toggleSubCategory}/> Topwear
+              <input className="w-3" type="checkbox" value={'alexgremiumgown'}  onChange={toggleSubCategory}/> Alex Premium Gown
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/> Bottomwear
+              <input className="w-3" type="checkbox" value={'georgettegown'} onChange={toggleSubCategory}/> Georgette Gown
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={'winterwear'} onChange={toggleSubCategory}/> Winterwear
+              <input className="w-3" type="checkbox" value={'cottongown'} onChange={toggleSubCategory}/> Cotton Gown
+            </p>
+            <p className="flex gap-2">
+              <input className="w-3" type="checkbox" value={'chinalinengown'} onChange={toggleSubCategory}/> China Linen Gown
             </p>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
+import logo from '../images/logo.png'
 
 const Navbar = () => {
     
@@ -17,7 +18,7 @@ const Navbar = () => {
     }
   return (
     <nav className="flex items-center justify-between py-5 font-medium">
-      <Link to='/'><img src={assets.logo_main} className="w-12 md:w-14" alt="logo" /></Link>
+      <Link to='/'><img src={logo} className="w-12 md:w-14" alt="logo" /></Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
